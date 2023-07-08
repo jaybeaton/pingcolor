@@ -17,6 +17,8 @@ const LIMIT1 = "limit-1";
 const LIMIT2 = "limit-2";
 const LIMIT3 = "limit-3";
 const LIMIT4 = "limit-4";
+const POSITION = "position";
+const POSITION_WEIGHT = "position-weight";
 
 function init() {
     ExtensionUtils.initTranslations(GETTEXT_DOMAIN);
@@ -51,6 +53,12 @@ function buildPrefsWidget () {
         // Address to ping.
         let widget5 = builder.get_object('eAddress');
         settings.bind(ADDRESS, widget5, 'text', Gio.SettingsBindFlags.DEFAULT);
+
+        // Position of extension.
+        let widget6 = builder.get_object('ePosition');
+        settings.bind(POSITION, widget6, 'text', Gio.SettingsBindFlags.DEFAULT);
+        let widget7 = builder.get_object('spPositionWeight');
+        settings.bind(POSITION_WEIGHT, widget7, 'value', Gio.SettingsBindFlags.DEFAULT);
 
         return builder.get_object('prefs-container') ;
 }

@@ -23,6 +23,8 @@ const LIMIT1 = "limit-1";
 const LIMIT2 = "limit-2";
 const LIMIT3 = "limit-3";
 const LIMIT4 = "limit-4";
+const POSITION = "position";
+const POSITION_WEIGHT = "position-weight";
 
 let mpingcolor;
 let settings;
@@ -178,7 +180,9 @@ function init() {
 function enable() {
     settings = ExtensionUtils.getSettings('org.gnome.shell.extensions.pingcolor');
     mpingcolor = new Extension();
-    Main.panel.addToStatusArea('mpingcolor', mpingcolor, 9, 'left');
+    let position = settings.get_string(POSITION);
+    let positionWeight = settings.get_int(POSITION_WEIGHT);
+    Main.panel.addToStatusArea('mpingcolor', mpingcolor, positionWeight, position);
     timeout=GLib.timeout_add(GLib.PRIORITY_DEFAULT_IDLE,settings.get_int(UPDTEDLY)*1000, update );
 }
 

@@ -28,6 +28,13 @@
     <property name="step_increment">1</property>
     <property name="page_increment">10</property>
   </object>
+  <object class="GtkAdjustment" id="adjPositionWeight">
+    <property name="lower">0</property>
+    <property name="upper">100</property>
+    <property name="value">9</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
   <object class="GtkAdjustment" id="adjustDly">
     <property name="lower">1</property>
     <property name="upper">360</property>
@@ -153,6 +160,43 @@
                           <object class="GtkSpinButton" id="spIndicLevel4">
                             <property name="visible">True</property>
                             <property name="adjustment">adjIndicLevel4</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="homogeneous">True</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">Position: </property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="ePosition">
+                            <property name="visible">True</property>
+                            <property name="text" translatable="yes">left</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="homogeneous">True</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">Position weight (higher values mean further to the right): </property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkSpinButton" id="spPositionWeight">
+                            <property name="visible">True</property>
+                            <property name="adjustment">adjPositionWeight</property>
                           </object>
                         </child>
                       </object>

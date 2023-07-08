@@ -26,5 +26,13 @@
             <default>1000</default>
             <summary>Limit for very slow ping (ms)</summary>
         </key>
+        <key type="s" name="position">
+            <default>'left'</default>
+            <summary>Position of extension</summary>
+        </key>
+        <key type="i" name="position-weight">
+            <default>9</default>
+            <summary>Relative position of extension (Higher numbers mean further to the right)</summary>
+        </key>
     </schema>
 </schemalist>
