@@ -1,0 +1,9 @@
+.pingcolor-label {color : #FFE5CC; font-weight: bold;font-size: 8pt}
+.pingcolor-button-action { icon-size: 20px; }
+.pingcolor-button-box { padding: 0px; spacing: 22px; }
+.pingcolor-button-label {color : #0F050C; font-weight: bold;font-size: 11pt}
+.pingcolor-label-level-1 {color : #7cb342; font-weight: bold; font-size: 11pt}
+.pingcolor-label-level-2 {color : #00FFFF; font-weight: bold; font-size: 11pt}
+.pingcolor-label-level-3 {color : #D26BE4; font-weight: bold; font-size: 11pt}
+.pingcolor-label-level-4 {color : #ffcc32; font-weight: bold; font-size: 11pt}
+.pingcolor-label-error {color : #f44336; font-weight: bold; font-size: 11pt}

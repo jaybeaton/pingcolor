@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkAdjustment" id="adjIndicLevel1">
+    <property name="lower">1</property>
+    <property name="upper">1000</property>
+    <property name="value">30</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adjIndicLevel2">
+    <property name="lower">1</property>
+    <property name="upper">1000</property>
+    <property name="value">60</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adjIndicLevel3">
+    <property name="lower">1</property>
+    <property name="upper">1000</property>
+    <property name="value">120</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adjIndicLevel4">
+    <property name="lower">1</property>
+    <property name="upper">2000</property>
+    <property name="value">1000</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adjustDly">
+    <property name="lower">1</property>
+    <property name="upper">360</property>
+    <property name="value">20</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkBox" id="prefs-container">
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Delay between ping (seconds): </property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkSpinButton" id="spbtnDly">
+                <property name="visible">True</property>
+                <property name="adjustment">adjustDly</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">IP address to ping: </property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkEntry" id="eAddress">
+                <property name="visible">True</property>
+                <property name="text" translatable="yes">8.8.8.8</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkFrame">
+            <property name="visible">True</property>
+            <property name="label_xalign">0</property>
+            <child>
+                  <object class="GtkBox">
+                    <property name="homogeneous">True</property>
+                    <property name="visible">True</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="homogeneous">True</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                             <property name="label" translatable="yes">Limit for fast ping (ms): </property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkSpinButton" id="spIndicLevel1">
+                            <property name="visible">True</property>
+                            <property name="adjustment">adjIndicLevel1</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="homogeneous">True</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                             <property name="label" translatable="yes">Limit for medium ping (ms): </property>
+                          </object>di
+                        </child>
+                        <child>
+                          <object class="GtkSpinButton" id="spIndicLevel2">
+                            <property name="visible">True</property>
+                            <property name="adjustment">adjIndicLevel2</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="homogeneous">True</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                             <property name="label" translatable="yes">Limit for slow ping (ms): </property>
+                          </object>di
+                        </child>
+                        <child>
+                          <object class="GtkSpinButton" id="spIndicLevel3">
+                            <property name="visible">True</property>
+                            <property name="adjustment">adjIndicLevel3</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="homogeneous">True</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                             <property name="label" translatable="yes">Limit for very slow ping (ms): </property>
+                          </object>di
+                        </child>
+                        <child>
+                          <object class="GtkSpinButton" id="spIndicLevel4">
+                            <property name="visible">True</property>
+                            <property name="adjustment">adjIndicLevel4</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+            </child>
+            <child type="label">
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Ping time thresholds (will determine color)</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

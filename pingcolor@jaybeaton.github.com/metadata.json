@@ -1,0 +1,7 @@
+{
+  "name": "PingColor",
+  "description": "Show network ping latency",
+  "uuid": "pingcolor@jaybeaton.github.com",
+  "shell-version": [ "42","43", "44" ],
+  "url": "https://github.com/jaybeaton/pingcolor"
+}

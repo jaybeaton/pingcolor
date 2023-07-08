@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="PingColor">
+    <schema path="/org/gnome/shell/extensions/pingcolor/" id="org.gnome.shell.extensions.pingcolor">
+        <key type="i" name="update-interval">
+            <default>15</default>
+            <summary>Delay (sec)</summary>
+            <description>Delay between pings.</description>
+        </key>
+        <key type="s" name="address">
+            <default>'8.8.8.8'</default>
+            <summary>IP address to ping</summary>
+        </key>
+        <key type="i" name="limit-1">
+            <default>30</default>
+            <summary>Limit for fast ping (ms)</summary>
+        </key>
+        <key type="i" name="limit-2">
+            <default>60</default>
+            <summary>Limit for medium ping (ms)</summary>
+        </key>
+        <key type="i" name="limit-3">
+            <default>120</default>
+            <summary>Limit for slow ping (ms)</summary>
+        </key>
+        <key type="i" name="limit-4">
+            <default>1000</default>
+            <summary>Limit for very slow ping (ms)</summary>
+        </key>
+    </schema>
+</schemalist>
