@@ -115,15 +115,17 @@ class Extension extends PanelMenu.Button{
     }
 
      loadPipeOUT(channel, condition, data) {
+        let labelText = _("❌");
+        let styleClassName = 'pingcolor-label-error';
         if (condition !== GLib.IOCondition.HUP) {
             let out = channel.read_line(); //dummy
             out = channel.read_line();
             const result =  out[1].split('=');
-            if(result[3] != null) {
+            if (result[3] != null) {
                 const val = result[3].split('\n');
                 let time = parseFloat(val);
                 let timeText = '';
-                setlabelstyle(time);
+                styleClassName = getLabelStyle(time);
                 if (time > 1000) {
                     time = Math.round(time / 100) / 10;
                     timeText = time + 's';
@@ -132,13 +134,11 @@ class Extension extends PanelMenu.Button{
                     time = Math.round(time);
                     timeText = time + 'ms';
                 }
-                label.set_text('⬤ ' + timeText);
+                labelText = '⬤ ' + timeText;
             }
         }
-        else {
-           label.set_text(_("❌"));
-           label.set_style_class_name('pingcolor-label-error');
-        }
+        label.set_text(labelText);
+        label.set_style_class_name(styleClassName);
         GLib.source_remove(tagWatchOUT);
         channel.shutdown(true);
         //GLib.spawn_close_pid(pid);
@@ -155,18 +155,17 @@ class Extension extends PanelMenu.Button{
     }
 });
 
-function setlabelstyle(time){
+function getLabelStyle(time){
     if (time >= settings.get_int(LIMIT4)) {
-        label.set_style_class_name('pingcolor-label-error');
+        return 'pingcolor-label-error';
     } else if (time >= settings.get_int(LIMIT3)) {
-        label.set_style_class_name('pingcolor-label-level-4');
+        return 'pingcolor-label-level-4';
     } else if (time >= settings.get_int(LIMIT2)) {
-        label.set_style_class_name('pingcolor-label-level-3');
+        return 'pingcolor-label-level-3';
     } else if (time >= settings.get_int(LIMIT1)) {
-        label.set_style_class_name('pingcolor-label-level-2');
-    } else {
-        label.set_style_class_name('pingcolor-label-level-1');
+        return 'pingcolor-label-level-2';
     }
+    return 'pingcolor-label-level-1';
 }
 
 function update() {
